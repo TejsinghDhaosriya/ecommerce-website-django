@@ -19,8 +19,8 @@ def productview(request):
     return HttpResponse("we are at prdv")
 
 def about(request):
-    return HttpResponse("we are at about")
-
+    #return HttpResponse("we are at about")
+    return render(request,'shop/about.html')
 def tracker(request):
     return HttpResponse("we are at tacker")
 def checkout(request):
