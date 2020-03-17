@@ -26,22 +26,21 @@ def index(request):
 
     #return HttpResponse("myblog") 
 def tacker(request):
-    return HttpResponse("we are at tracker")
-
+    return render(request,'shop/tracker.html')
 def search(request):
-    return HttpResponse("we are at search")
+    return render(request,'shop/search.html')
 
 def contact(request):
-    return HttpResponse("we are at contatus")
+    return render(request,'shop/contact.html')
 
 def productview(request):
-    return HttpResponse("we are at prdv")
+    return render(request,'shop/productview.html')
 
 def about(request):
     #return HttpResponse("we are at about")
     return render(request,'shop/about.html')
 def tracker(request):
-    return HttpResponse("we are at tacker")
+    return render(request,'shop/tracker.html')
 def checkout(request):
     return render(request,'shop/checkout.html')
     #return HttpResponse("we are at checker")
