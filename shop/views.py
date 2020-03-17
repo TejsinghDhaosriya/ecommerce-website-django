@@ -43,4 +43,5 @@ def about(request):
 def tracker(request):
     return HttpResponse("we are at tacker")
 def checkout(request):
-    return HttpResponse("we are at checker")
+    return render(request,'shop/checkout.html')
+    #return HttpResponse("we are at checker")
