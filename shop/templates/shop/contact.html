@@ -1,3 +1,167 @@
 {%extends 'shop/base.html'%}
 {%block title%}ContactUs{%endblock%}
-{%block body%}This is ContactUs body{%endblock%}
+{%block body%}
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModal">Login using your credentials</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form action="/profile/login" method='post'><input type="hidden" name="csrfmiddlewaretoken" value="CbfJlHmPPp1r9tBR9giWRe74OBsGhm0gPXLrR2NjUG5DrOYrZc3aUN2eN0DGRmXM">
+                    <div class="form-group">
+                        <label for="lusername">Username</label>
+                        <input type="name" class="form-control" id="luname" placeholder="Enter your username"
+                            name="uname">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="lpassword" placeholder="Enter your password"
+                            name="password">
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="6LdvcqwUAAAAACmPYNVoiJA7D84xLSQQt5g9p10m"></div>
+                    <input type="hidden" name="path" value="/contact/">
+
+                    <button type="submit" class="btn btn-danger mt-2" id="loginsubmit">Login</button>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+  <!-- SignUp Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupModal">SignUp for an account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+            <form name="contact" method="post" action="/profile/signup"><input type="hidden" name="csrfmiddlewaretoken" value="CbfJlHmPPp1r9tBR9giWRe74OBsGhm0gPXLrR2NjUG5DrOYrZc3aUN2eN0DGRmXM">
+                
+                <div class="form-group">
+                    <label for="uname">Username</label>
+                    <input type="text" class="form-control" id="uname" placeholder="Enter your Name" name="uname">
+                </div>
+                <div class="form-group">
+                    <label for="name">First Name</label>
+                    <input type="text" class="form-control" id="fname" placeholder="Enter your First Name" name="fname">
+                </div>
+                <div class="form-group">
+                    <label for="name">Last Name</label>
+                    <input type="text" class="form-control" id="lname" placeholder="Enter your Last Name" name="lname">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your Email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Choose a password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Choose a password" name="password">
+                </div>
+                <div class="form-group">
+                    <label for="password2">Retype a password</label>
+                    <input type="password" class="form-control" id="password2" placeholder="Retype your password" name="password2">
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LdvcqwUAAAAACmPYNVoiJA7D84xLSQQt5g9p10m"></div>
+                <input type="hidden" name="path" value="/contact/">
+                <button type="submit" class="btn btn-danger mt-2">SignUp</button>
+            </form>
+        </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-2">
+
+            <!-- THE CONTACT FORM IS HERE -->
+                <h2>Contact me!</h2>
+                <form action="/contact/" method='post'><input type="hidden" name="csrfmiddlewaretoken" value="CbfJlHmPPp1r9tBR9giWRe74OBsGhm0gPXLrR2NjUG5DrOYrZc3aUN2eN0DGRmXM">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="name" class="form-control" id="name" placeholder="Enter your Name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" class="form-control" id="cemail" placeholder="Enter your Email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Your Phone Number (with country code)</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Enter your Phone Number"
+                            name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Describe what you want to contact me for here</label>
+                        <textarea type="text" class="form-control" id="message" placeholder="Your message" name="message"></textarea>
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="6LdvcqwUAAAAACmPYNVoiJA7D84xLSQQt5g9p10m"></div>
+                    <button type="submit" class="btn btn-danger mt-2">Submit</button>
+                </form>
+            
+        </div>
+        <hr>
+
+        <!-- SIDE WIDGET IS HERE -->
+        <div class="col-md-4">
+    <div class="col-md-8">
+        <div class="my-4">
+            <form action="/search" method='get'>
+                <h4>Search</h4>
+                <div>
+                    <input type="text" name='query' class="form-control">
+                    <button type='submit' class="btn btn-danger mt-2 ">Search
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="my-4">
+            <h4>Subscribe To My YouTube Channels</h4>
+            <div class="my-2">
+                    <div class="g-ytsubscribe" data-channelid="UC7btqG2Ww0_2LwuQxpvo2HQ" data-layout="full"
+                        data-count="default"></div><br>
+                </div>
+            <div class="my-2">
+                <div class="g-ytsubscribe" data-channelid="UCeVMnSShP_Iviwkknt83cww" data-layout="full"
+                    data-count="default"></div><br>
+            </div>
+            <div class="my-2">
+                <div class="g-ytsubscribe" data-channelid="UCa5UDzFzpIjJ1VSxCSlQP_g" data-layout="full"
+                    data-count="default"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    </div>
+</div>
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="container mt-3">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2019-2020 CodeWithHarry.com &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+
+{%endblock%}
