@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Product
-from .models import Contact
+from .models import Product,Contact
+#from .models import Contact
 # Register your models here.
 admin.site.register(Product)
 
