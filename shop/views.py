@@ -36,7 +36,7 @@ def contact(request):
         email=request.POST.get('email','')
         phone=request.POST.get('phone','')
         desc=request.POST.get('desc','')
-        print(name)
+        print(name,email,phone,desc)
     return render(request,'shop/contact.html')
 
 def productview(request):
