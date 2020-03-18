@@ -32,7 +32,8 @@ def search(request):
 
 def contact(request):
     if request.method==    "POST":
-        print(request)
+        name=request.POST.get('name','')
+        print(name)
     return render(request,'shop/contact.html')
 
 def productview(request):
