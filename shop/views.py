@@ -31,7 +31,7 @@ def search(request):
     return render(request,'shop/search.html')
 
 def contact(request):
-    if request="POST":
+    if request=="POST":
         print(request)
     return render(request,'shop/contact.html')
 
