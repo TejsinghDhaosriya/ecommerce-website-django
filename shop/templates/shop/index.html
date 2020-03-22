@@ -134,7 +134,7 @@ document.getElementById("popcart").setAttribute('data-content','<h5>Cart of tej<
 
 function update(cart){
 for (var item in car){
-  document.getElementById('div').innerHTML();
+  document.getElementById('div'+k).innerHTML("<button id='minus'+item+"'class='btn btn-primary minus'>-</button><span id='val'"+item+"''>"+cart[item]+"</span><button id='plus'+item+"' class='btn btn-primary plus'>+</button>">;
 }
 
 }
